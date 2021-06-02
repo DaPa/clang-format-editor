@@ -359,10 +359,11 @@ namespace ClangFormatEditor
       for (int i = 0; i < operationLines.Count; i++)
       {
         var run = new Run();
+        string txt = operationLines[i].Item1.ToString().TrimEnd();
         switch (operationLines[i].Item2)
         {
           case LineChanges.NOCHANGES:
-            run.Text = (string)operationLines[i].Item1;
+            run.Text = txt;
             paragraph.Inlines.Add(run);
             paragraph.Inlines.Add(Environment.NewLine);
             break;
@@ -373,14 +374,14 @@ namespace ClangFormatEditor
             }
             else
             {
-              run.Text = AddPadding((string)operationLines[i].Item1, maxLineWidth, false);
+              run.Text = txt;
               run.Background = lineDiffColor;
               paragraph.Inlines.Add(run);
               paragraph.Inlines.Add(Environment.NewLine);
             }
             break;
           case LineChanges.NEWLINE:
-            run.Text = AddPadding((string)operationLines[i].Item1, maxLineWidth, true);
+            run.Text = txt;
             run.Background = (Brush)new BrushConverter().ConvertFrom("#D3D3D3");
             paragraph.Inlines.Add(run);
             break;
