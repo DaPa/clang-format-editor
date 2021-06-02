@@ -169,8 +169,8 @@
     <TextBlock
       Grid.Row="8"
       Grid.Column="4"
-      HorizontalAlignment="Right"
-      VerticalAlignment="Bottom"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center"
       FontSize="10"
       Foreground="White"
       Text="{Binding Version}" />

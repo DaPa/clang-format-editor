@@ -435,6 +435,11 @@ namespace ClangFormatEditor
     private static string AddPadding(string text, int targetPadding, bool isNewLine)
     {
       var paddingCount = targetPadding - text.Length;
+      // if too long, then don't pad at all!
+      if (paddingCount < 0)
+      {
+        paddingCount = 0;
+      }
       if (isNewLine)
       {
         return new string(' ', paddingCount) + text;
