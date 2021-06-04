@@ -34,7 +34,7 @@ namespace ClangFormatEditor
       { "PointerAlignment", new string[]{ "Left","Right", "Middle" }},
       { "SpaceBeforeParens", new string[]{ "Never", "ControlStatements", "Always" }},
       { "SpacesBeforeTrailingComments", new string[]{ "1", "2", "3" }},
-      { "Standard", new string[]{ "Cpp11", "Cpp14", "Cpp17", "Cpp20", "Auto" }},
+      { "Standard", new string[]{ "c++03", "c++11", "c++14", "c++17", "c++20", "Latest", "Auto" }},
       { "TabWidth", new string[]{ "4", "6", "8", "10" }},
       { "UseTab", new string[] { "Never", "ForIndentation", "ForContinuationAndIndentation", "Always" }},
     };

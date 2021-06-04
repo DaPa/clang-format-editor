@@ -206,6 +206,12 @@ namespace ClangFormatEditor
         // if (inputLines.Count != outputLines.Count) return;
       }
 
+      if(outputLines.Count > inputLines.Count)
+      {
+        //MessageBox.Show(output, "Clang-Format Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        return;
+      }
+
       for (int index = 0; index < outputLines.Count; index++)
       {
         var lineDiffs = GetDiff(inputLines[index], outputLines[index]);
