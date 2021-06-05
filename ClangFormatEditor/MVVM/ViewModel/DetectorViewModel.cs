@@ -50,10 +50,32 @@ namespace ClangFormatEditor.MVVM.ViewModels
       get => formatStyleOptions;
       set => formatStyleOptions = value;
     }
+
+    public static IEnumerable<FormatStyle> Styles
+    {
+      get => Enum.GetValues(typeof(FormatStyle)).Cast<FormatStyle>();
+    }
+
     public FormatStyle SelectedStyle
     {
       get => selectedStyle;
-      set => selectedStyle = value;
+      set
+      {
+        bool diff = (selectedStyle != value);
+        if(diff)
+        {
+          selectedStyle = value;
+          OnPropertyChanged(nameof(SelectedStyle));
+          if(Style != null)
+          {
+            // simulate a ReloadCommand command
+            if (this.ReloadCommand.CanExecute(null))
+            {
+              this.ReloadCommand.Execute(null);
+            }
+          }
+        }
+      }
     }
     public string Style { get; set; }
     public static IEnumerable<ToggleValues> BooleanComboboxValues
@@ -229,11 +251,12 @@ namespace ClangFormatEditor.MVVM.ViewModels
     {
       FileNames = DiffController.GetFileNames(filePaths);
       SetFlowDocuments();
-      Style = "Base Style: " + SelectedStyle.ToString();
+      Style = "Base Style: "; // + SelectedStyle.ToString();
 
       OnPropertyChanged(nameof(FileNames));
       OnPropertyChanged(nameof(FormatOptions));
       OnPropertyChanged(nameof(Style));
+      OnPropertyChanged(nameof(SelectedStyle));
     }
 
     private async Task ReloadDiffAsync(string title, string description, string descriptionExtra)
