@@ -1,5 +1,6 @@
 ﻿using ClangFormatEditor.MVVM.ViewModels;
 using System.Windows;
+using System.Windows.Input;
 
 namespace ClangFormatEditor.MVVM.Views
 {
@@ -13,6 +14,7 @@ namespace ClangFormatEditor.MVVM.Views
     public FileSelectorView(DetectorView detector)
     {
       InitializeComponent();
+      PreviewKeyDown += (s, e) => { if (e.Key == Key.Escape) Close(); };
       fileSelectorViewModel = new FileSelectorViewModel(this, detector);
       DataContext = fileSelectorViewModel;
     }

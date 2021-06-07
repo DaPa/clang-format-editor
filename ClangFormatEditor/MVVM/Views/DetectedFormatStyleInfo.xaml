@@ -97,6 +97,7 @@
       Width="100"
       HorizontalAlignment="Center"
       VerticalAlignment="Top"
+      IsCancel="true"
       Click="ContinueButton_Click"
       Content="Continue"
       FontSize="14"
