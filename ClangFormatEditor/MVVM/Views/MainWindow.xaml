@@ -9,7 +9,7 @@
   Width="800"
   Height="440"
   Icon="/ClangFormatEditor;component/Resources/ClangPowerToolsIco.ico"
-  ResizeMode="NoResize"
+  ResizeMode="CanMinimize"
   WindowStartupLocation="CenterScreen"
   mc:Ignorable="d">
 
