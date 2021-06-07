@@ -109,6 +109,7 @@
           FontFamily="Consolas"
           HorizontalScrollBarVisibility="Auto"
           IsReadOnly="True"
+          IsReadOnlyCaretVisible="True"
           ScrollViewer.ScrollChanged="Diff_ScrollChanged"
           VerticalScrollBarVisibility="Auto" />
       </Grid>
@@ -171,6 +172,7 @@
           FontFamily="Consolas"
           HorizontalScrollBarVisibility="Auto"
           IsReadOnly="True"
+          IsReadOnlyCaretVisible="True"
           ScrollViewer.ScrollChanged="Diff_ScrollChanged"
           VerticalScrollBarVisibility="Auto" />
       </Grid>

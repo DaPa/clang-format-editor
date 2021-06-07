@@ -376,6 +376,7 @@
             FontSize="12"
             HorizontalScrollBarVisibility="Auto"
             IsReadOnly="True"
+            IsReadOnlyCaretVisible="True"
             ScrollViewer.ScrollChanged="Output_ScrollChanged"
             VerticalScrollBarVisibility="Auto" />
         </Grid>
