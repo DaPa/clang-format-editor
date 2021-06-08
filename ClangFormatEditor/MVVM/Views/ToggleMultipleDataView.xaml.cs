@@ -1,6 +1,7 @@
 ﻿using ClangFormatEditor.MVVM.Models;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Input;
 
 namespace ClangFormatEditor.MVVM.Views
 {
@@ -12,6 +13,7 @@ namespace ClangFormatEditor.MVVM.Views
     public ToggleMultipleDataView(List<ToggleModel> input, Window owner)
     {
       InitializeComponent();
+      PreviewKeyDown += (s, e) => { if (e.Key == Key.Escape) Close(); };
       DataContext = new ToggleMultipleDataViewModel(input);
       Owner = owner;
     }
